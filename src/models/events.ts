@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { Message } from '@/models/messages';
-import { ConnectionRequest } from '@/models/connection';
+import { ConnectionRequest } from '@/models/connections';
 
 const BaseEventSchema = z.object({
     type: z.string(),

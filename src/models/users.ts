@@ -1,4 +1,4 @@
-import { EmailAddress } from "@/models/email";
+import { EmailAddress } from "@/models/emails";
 
 interface User {
   id: string;
@@ -7,9 +7,6 @@ interface User {
   lastName: string | null;
   imageUrl: string;
   emailAddresses: EmailAddress[];
-  passwordEnabled: boolean;
-  twoFactorEnabled: boolean;
-  backupCodeEnabled: boolean;
   createdAt: number;
   updatedAt: number;
 };
