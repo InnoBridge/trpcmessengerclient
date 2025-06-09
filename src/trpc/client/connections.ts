@@ -1,5 +1,5 @@
 import { client } from '@/trpc/client/api';
-import { Connection, ConnectionRequest } from '@/models/connection';
+import { Connection, ConnectionRequest } from '@/models/connections';
 
 const getConnectionRequests = async (userId: string): Promise<ConnectionRequest[]> => {
     return await (client as any).connections.getRequests.query({ userId });
