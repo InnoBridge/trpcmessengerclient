@@ -6,7 +6,7 @@ import {
   wsLink,
   splitLink
 } from '@trpc/client';
-import WebSocket from 'ws';
+// import WebSocket from 'ws';
 import { BaseEvent } from '@/models/events';
 
 let client: TRPCClient<any> | null = null;
