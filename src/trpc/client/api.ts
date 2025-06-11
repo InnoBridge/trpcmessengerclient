@@ -15,14 +15,15 @@ let httpLink: ReturnType<typeof httpBatchLink> | null = null;
 
 const initializeTRPCClient = (url: string): void => {
   const host = url.replace(/^https?:\/\//, '');
-
+  console.log("host", host);
+  console.log("url", url);
   wsClient = createWSClient({
     url: `ws://${host}/trpc`,
     WebSocket: WebSocket as any,
   });
   
   httpLink = httpBatchLink({
-    url: `http://${host}/trpc`,
+    url: `${url}/trpc`,
     headers: () => ({
       // 'Content-Type': 'application/json',
       'Accept': 'application/json',
