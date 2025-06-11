@@ -15,8 +15,6 @@ let httpLink: ReturnType<typeof httpBatchLink> | null = null;
 
 const initializeTRPCClient = (url: string): void => {
   const host = url.replace(/^https?:\/\//, '');
-  console.log("host", host);
-  console.log("url", url);
   wsClient = createWSClient({
     url: `ws://${host}/trpc`,
     WebSocket: WebSocket as any,
