@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { Chat, Message } from '@/models/chats';
-import { ConnectionRequest } from '@/models/connections';
+import { ConnectionRequest, Connection } from '@/models/connections';
 
 const BaseEventSchema = z.object({
     type: z.string(),
@@ -40,6 +40,12 @@ interface ConnectionRequestEvent extends BaseEvent {
     connectionRequest: ConnectionRequest;
 };
 
+interface ConnectionRequestAcceptedEvent extends BaseEvent {
+    type: 'connectionRequestAccepted';
+    connectionRequest: ConnectionRequest;
+    connection: Connection;
+};
+
 interface ConnectionDeletionEvent extends BaseEvent {
     type: 'connectionDeletion';
     connectionId: number;
@@ -52,5 +58,6 @@ export {
     ChatMessageEvent,
     ChatDeletionEvent,
     ConnectionRequestEvent,
+    ConnectionRequestAcceptedEvent,
     ConnectionDeletionEvent
 };
