@@ -1,6 +1,6 @@
 {
   "name": "@innobridge/trpcmessengerclient",
-  "version": "0.3.3",
+  "version": "0.4.1",
   "description": "A React Native library to stub tRPC client for @innobridge/trpcmessenger",
   "author": "yilengyao <innobridgetechnology@gmail.com>",
   "repository": {
