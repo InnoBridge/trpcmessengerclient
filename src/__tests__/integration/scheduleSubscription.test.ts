@@ -32,7 +32,7 @@ const subscribeToScheduleEvent = async (providerId: string, subscriberId: string
         try {
             console.log('Received schedule event:', event.type);
             switch (event.type) {
-                case 'scheduleEvent':
+                case 'schedule':
                     console.log('Schedule Event:', event);
                     break;
                 default:
