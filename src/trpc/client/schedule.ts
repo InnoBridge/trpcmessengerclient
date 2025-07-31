@@ -1,5 +1,6 @@
 import { client } from '@/trpc/client/api';
 import { Event, EventStatus } from '@/models/scheduledEvents';
+import { custom } from 'zod';
 
 const getEventById = async (eventId: string): Promise<Event | null> => {
     return await (client as any).schedule.getEventById.query({ eventId });
@@ -21,8 +22,8 @@ const createEvent = async (event: Event): Promise<Event> => {
     return await (client as any).schedule.createEvent.mutate(event);
 };
 
-const updateEventStatus = async (eventId: string, status: EventStatus): Promise<Event> => {
-    return await (client as any).schedule.updateEventStatus.mutate({ eventId, status });
+const updateEventStatus = async (eventId: string, status: EventStatus, customerId?: string, color?: string): Promise<Event> => {
+    return await (client as any).schedule.updateEventStatus.mutate({ eventId, status, customerId, color });
 };
 
 const deleteEvent = async (eventId: string): Promise<void> => {
