@@ -5,6 +5,11 @@ const getUserByUsername = async (username: string): Promise<User | null> => {
     return await (client as any).users.getUserByUsername.query({ username });
 };
 
+const getUserById = async (id: string): Promise<User | null> => {
+    return await (client as any).users.getUserById.query({ id });
+};
+
 export {
-    getUserByUsername
+    getUserByUsername,
+    getUserById
 };
